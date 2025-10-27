@@ -1,0 +1,17 @@
+.card {
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-range {
+  accent-color: #6c5ce7;
+}
+
+h2 {
+  font-weight: 700;
+}

@@ -9,11 +9,15 @@ import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesComponent } from './pages.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { HotelManagementComponent } from './hotel-management/hotel-management.component';
-import { RoomsManagementComponent } from './rooms-management/rooms-management.component';
-import { BookingsComponent } from './bookings/bookings.component';
-import { ReservarComponent } from './customer/reservar/reservar.component';
-import { ReservasComponent } from './customer/reservas/reservas.component';
+import { NormasComponent } from './normas/normas.component';
+import { ModelosComponent } from './modelos/modelos.component';
+import { EstandaresComponent } from './estandares/estandares.component';
+import { MetricasComponent } from './metricas/metricas.component';
+import { TestingComponent } from './testing/testing.component';
+import { EvaluacionComponent } from './evaluacion/evaluacion.component';
+import { CodigoYProgramacionComponent } from './CodigoYProgramacion/CodigoYProgramacion.component';
+import { ConclusionesComponent } from './conclusiones/conclusiones.component';
+import { RecomendacionesComponent } from './recomendaciones/recomendaciones.component';
 
 
 
@@ -23,11 +27,15 @@ import { ReservasComponent } from './customer/reservas/reservas.component';
     DashboardComponent,
     PagesComponent,
     AccountSettingsComponent,
-    HotelManagementComponent,
-    RoomsManagementComponent,
-    BookingsComponent,
-    ReservarComponent,
-    ReservasComponent,
+    NormasComponent,
+    ModelosComponent,
+    EstandaresComponent,
+    MetricasComponent,
+    TestingComponent,
+    EvaluacionComponent,
+    CodigoYProgramacionComponent,
+    ConclusionesComponent,
+    RecomendacionesComponent
   ],
   exports: [
     DashboardComponent,

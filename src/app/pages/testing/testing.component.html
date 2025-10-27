@@ -1,0 +1,138 @@
+<div class="container py-4">
+  <h3 class="fw-bold text-dark mb-3">Pruebas de Software y Técnicas de Testing</h3>
+  <p class="text-muted mb-4">
+    Las pruebas de software garantizan que las aplicaciones cumplan los requisitos funcionales y no funcionales definidos.
+    Son esenciales para prevenir fallos costosos, mejorar la experiencia del usuario y asegurar la calidad antes del despliegue.
+  </p>
+
+  <!-- === Primera fila (3 tarjetas) === -->
+  <div class="row gy-4 gx-4">
+    <!-- Pruebas Funcionales -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-sm h-100 p-3">
+        <div class="d-flex align-items-center mb-2">
+          <i class="bi bi-check2-square fs-3 text-primary me-2"></i>
+          <h5 class="fw-bold mb-0">Pruebas Funcionales</h5>
+        </div>
+        <p class="text-muted small">
+          Evalúan si el sistema cumple con los requisitos establecidos.  
+          Pueden realizarse manualmente o de forma automatizada, validando cada funcionalidad del software según los casos de uso.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pruebas No Funcionales -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-sm h-100 p-3">
+        <div class="d-flex align-items-center mb-2">
+          <i class="bi bi-speedometer2 fs-3 text-success me-2"></i>
+          <h5 class="fw-bold mb-0">Pruebas No Funcionales</h5>
+        </div>
+        <p class="text-muted small">
+          Miden aspectos como rendimiento, seguridad, usabilidad y accesibilidad.  
+          Aseguran que el software sea estable, rápido y fácil de usar bajo diferentes condiciones.
+        </p>
+      </div>
+    </div>
+
+    <!-- Ciclo de Testing -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-sm h-100 p-3">
+        <div class="d-flex align-items-center mb-2">
+          <i class="bi bi-arrow-repeat fs-3 text-warning me-2"></i>
+          <h5 class="fw-bold mb-0">Ciclo de Vida del Testing</h5>
+        </div>
+        <p class="text-muted small">
+          Incluye planificación, diseño, ejecución y cierre de pruebas.  
+          Este ciclo permite la detección temprana de errores y fomenta la mejora continua del producto.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Segunda fila (2 tarjetas) === -->
+  <div class="row gy-4 gx-4 mt-2">
+    <!-- Técnicas de Testing -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-sm h-100 p-3">
+        <div class="d-flex align-items-center mb-2">
+          <i class="bi bi-diagram-3 fs-3 text-danger me-2"></i>
+          <h5 class="fw-bold mb-0">Técnicas de Testing</h5>
+        </div>
+        <p class="text-muted small">
+          <strong>Caja Negra:</strong> se centra en entradas y salidas del sistema.<br />
+          <strong>Caja Blanca:</strong> analiza el flujo interno del código.<br />
+          <strong>TDD y BDD:</strong> enfoques guiados por pruebas que integran calidad desde el desarrollo.
+        </p>
+      </div>
+    </div>
+
+    <!-- Herramientas de Testing -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-sm h-100 p-3">
+        <div class="d-flex align-items-center mb-2">
+          <i class="bi bi-bug-fill fs-3 text-info me-2"></i>
+          <h5 class="fw-bold mb-0">Herramientas de Testing</h5>
+        </div>
+        <p class="text-muted small">
+          <strong>Selenium</strong> para pruebas funcionales web.<br />
+          <strong>Postman</strong> para APIs REST.<br />
+          <strong>JMeter</strong> para rendimiento.<br />
+          <strong>Cypress</strong> para pruebas end-to-end modernas.<br />
+          <strong>Robot Framework</strong> para automatización genérica.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Prueba práctica interactiva (simulación simple) === -->
+  <div class="card border-0 shadow-sm mt-5 p-4">
+    <h5 class="fw-bold text-secondary mb-3">Simulador de Resultados de Pruebas</h5>
+    <p class="text-muted small mb-4">
+      Ajusta los resultados de las pruebas funcionales y no funcionales para ver el nivel de cumplimiento general.
+    </p>
+
+    <div class="row">
+      <div class="col-md-6 mb-3" *ngFor="let test of tests">
+        <label class="form-label fw-semibold">{{ test.nombre }}</label>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          [(ngModel)]="test.valor"
+          (input)="calcularResultado()"
+          class="form-range"
+        />
+        <div class="text-muted small">{{ test.valor }}%</div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <h4 class="fw-bold mb-2">Nivel de Cumplimiento de Pruebas</h4>
+      <h2
+        [ngClass]="{
+          'text-success': resultado >= 80,
+          'text-warning': resultado >= 50 && resultado < 80,
+          'text-danger': resultado < 50
+        }"
+      >
+        {{ resultado | number: '1.0-0' }}%
+      </h2>
+      <p class="text-muted small mb-0">
+        Este valor refleja el grado de cumplimiento de los objetivos de testing del sistema.
+      </p>
+    </div>
+  </div>
+
+  <!-- === Beneficios === -->
+  <div class="card border-0 shadow-sm mt-5 p-4 bg-light">
+    <h5 class="fw-bold text-secondary mb-3">Beneficios de las Pruebas de Software</h5>
+    <ul class="text-muted small mb-0">
+      <li>✔️ Detectan errores antes del lanzamiento y reducen costos de corrección.</li>
+      <li>✔️ Aumentan la confiabilidad y seguridad del software.</li>
+      <li>✔️ Mejoran la satisfacción del usuario final.</li>
+      <li>✔️ Fortalecen la reputación del producto y la marca.</li>
+    </ul>
+  </div>
+</div>

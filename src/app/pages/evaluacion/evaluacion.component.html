@@ -1,0 +1,51 @@
+<div class="container py-4" [formGroup]="form">
+  <h3 class="fw-bold text-dark mb-3">Evaluación de Conocimientos (Respuestas Escritas)</h3>
+  <p class="text-muted mb-4">
+    Escribe tus respuestas en los campos de texto. Al finalizar, presiona <strong>Enviar Respuestas</strong>.
+  </p>
+
+  <!-- Preguntas -->
+  <div *ngIf="!finalizado">
+    <div
+      class="card border-0 shadow-sm mb-4 p-4"
+      *ngFor="let pregunta of preguntas; let i = index"
+    >
+      <h5 class="fw-bold mb-3">Pregunta {{ i + 1 }}</h5>
+      <p class="text-dark mb-3">{{ pregunta.texto }}</p>
+
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Escribe tu respuesta aquí"
+        [formControlName]="'p' + i"
+      />
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn btn-primary px-4 py-2" (click)="finalizarEvaluacion()">
+        <i class="bi bi-check-circle me-2"></i> Enviar Respuestas
+      </button>
+    </div>
+  </div>
+
+  <!-- Resultado -->
+  <div *ngIf="finalizado" class="text-center mt-5">
+    <div class="card border-0 shadow-sm p-5 bg-light">
+      <h4 class="fw-bold mb-3">Resultado de la Evaluación</h4>
+      <h2
+        [ngClass]="{
+          'text-success': puntaje >= 80,
+          'text-warning': puntaje >= 50 && puntaje < 80,
+          'text-danger': puntaje < 50
+        }"
+      >
+        {{ puntaje }}%
+      </h2>
+      <p class="text-muted mb-4">{{ mensajeResultado }}</p>
+
+      <button class="btn btn-outline-secondary" (click)="reiniciar()">
+        <i class="bi bi-arrow-repeat me-2"></i> Intentar nuevamente
+      </button>
+    </div>
+  </div>
+</div>

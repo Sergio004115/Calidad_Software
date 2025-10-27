@@ -1,48 +1,122 @@
 <!-- ============================================================== -->
-<!-- Left Sidebar - style you can find in sidebar.scss  -->
+<!-- Left Sidebar -->
 <!-- ============================================================== -->
-<aside class="left-sidebar">
-    <!-- Sidebar scroll-->
-    <div class="scroll-sidebar">
-        <!-- Sidebar navigation-->
-        <nav class="sidebar-nav">
-            <ul id="sidebarnav">
-                <li *ngIf="users.tipoUsuario == '1'">
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                        <i class="mdi mdi-gauge"></i>
-                        <span class="hide-menu">
-                            Gestión Hotelera
-                        </span>
-                    </a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li>
-                            <a routerLink="./hotel">Hotel</a>
-                            <a routerLink="./rooms">Habitaciones</a>
-                            <a routerLink="./reservas">Reservas</a>
-                        </li>
-                    </ul>
-                </li>
+<aside class="left-sidebar" [class.collapsed]="!sidebarOpen">
+  <div class="scroll-sidebar">
+    <nav class="sidebar-nav">
+      <ul id="sidebarnav">
 
-                <li *ngIf="users.tipoUsuario != '1'">
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                        <i class="mdi mdi-gauge"></i>
-                        <span class="hide-menu">
-                            Reservar
-                        </span>
-                    </a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li>
-                            <a routerLink="./reservar">Reservar</a>
-                            <a routerLink="./misReservas">Mis Reservas</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <!-- End Sidebar navigation -->
-    </div>
-    <!-- End Sidebar scroll-->
+        <!-- SECCIÓN: INICIO -->
+        <li>
+          <a routerLink="/dashboard/inicio" routerLinkActive="active" class="waves-effect waves-dark">
+            <i class="mdi mdi-home"></i>
+            <span class="hide-menu">Inicio</span>
+          </a>
+        </li>
+
+        <!-- SECCIÓN: NORMAS -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-book-open-page-variant"></i>
+            <span class="hide-menu">Normas</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/normas">Ver Normas</a></li>
+          </ul>
+        </li>
+
+        <!-- SECCIÓN: MODELOS -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-graph"></i>
+            <span class="hide-menu">Modelos</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/modelos">Ver Modelos</a></li>
+          </ul>
+        </li>
+
+        <!-- SECCIÓN: ESTÁNDARES -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-code-tags"></i>
+            <span class="hide-menu">Estándares</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/estandares">Ver Estándares</a></li>
+          </ul>
+        </li>
+
+        <!-- SECCIÓN: CÓDIGO Y PROGRAMACIÓN -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-code-braces"></i>
+            <span class="hide-menu">Código y Programación</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/codigo">Ver Desarrollo</a></li>
+          </ul>
+        </li>
+
+        <!-- SECCIÓN: TESTING -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-bug-check"></i>
+            <span class="hide-menu">Testing</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/testing">Pruebas y Herramientas</a></li>
+          </ul>
+        </li>
+
+        <!-- SECCIÓN: MÉTRICAS -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-chart-line"></i>
+            <span class="hide-menu">Métricas</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/metricas">Simulador de Calidad</a></li>
+          </ul>
+        </li>
+
+        <!-- SECCIÓN: EVALUACIÓN -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-check-circle"></i>
+            <span class="hide-menu">Pruebas y Evaluación</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/evaluacion">Quiz de Autoevaluación</a></li>
+          </ul>
+        </li>
+
+        <!-- SECCIÓN: CONCLUSIONES -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-lightbulb-on-outline"></i>
+            <span class="hide-menu">Conclusiones</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/conclusiones">Ver Conclusiones</a></li>
+          </ul>
+        </li>
+
+        <!-- SECCIÓN: RECOMENDACIONES -->
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <i class="mdi mdi-comment-check-outline"></i>
+            <span class="hide-menu">Recomendaciones</span>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a routerLink="/dashboard/recomendaciones">Ver Recomendaciones</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
 </aside>
 <!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
+<!-- End Left Sidebar -->
 <!-- ============================================================== -->

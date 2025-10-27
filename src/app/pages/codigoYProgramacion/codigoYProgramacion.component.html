@@ -1,0 +1,90 @@
+<div class="container py-4">
+  <h3 class="fw-bold text-dark mb-3">Código y Programación</h3>
+  <p class="text-muted mb-4">
+    En esta sección se describe el proceso de desarrollo del aplicativo web, las herramientas empleadas
+    y las buenas prácticas aplicadas para garantizar la <strong>calidad del software</strong>.
+  </p>
+
+  <!-- === Estructura del proyecto === -->
+  <div class="card border-0 shadow-sm mb-4 p-4">
+    <h5 class="fw-bold text-secondary mb-2">Arquitectura del Proyecto</h5>
+    <p class="text-muted">
+      El sistema fue desarrollado con <strong>Angular</strong> bajo un enfoque modular, utilizando componentes
+      y servicios organizados en carpetas lógicas. Se aplicaron principios de mantenibilidad, escalabilidad
+      y reutilización de código.
+    </p>
+
+    <pre class="bg-light rounded p-3 small">
+📁 src/
+ ┣ 📂 app/
+ ┃ ┣ 📂 pages/ → Módulos principales (Normas, Modelos, Estándares, Evaluación...)
+ ┃ ┣ 📂 shared/ → Componentes compartidos (Sidebar, Header, Footer)
+ ┃ ┣ 📂 services/ → Servicios reutilizables
+ ┃ ┗ 📜 app.routes.ts
+ ┗ 📜 main.ts
+    </pre>
+  </div>
+
+  <!-- === Tecnologías === -->
+  <div class="card border-0 shadow-sm mb-4 p-4">
+    <h5 class="fw-bold text-secondary mb-2">Tecnologías Utilizadas</h5>
+    <ul class="text-muted">
+      <li><strong>Angular 10+</strong> – Framework base del proyecto.</li>
+      <li><strong>TypeScript</strong> – Lenguaje fuertemente tipado que mejora la legibilidad y mantenibilidad.</li>
+      <li><strong>Bootstrap 5</strong> – Para la maquetación visual responsive y minimalista.</li>
+      <li><strong>HTML5 / SCSS</strong> – Para la estructura semántica y estilos personalizados.</li>
+    </ul>
+  </div>
+
+  <!-- === Buenas prácticas === -->
+  <div class="card border-0 shadow-sm mb-4 p-4">
+    <h5 class="fw-bold text-secondary mb-2">Buenas Prácticas Aplicadas</h5>
+    <ul class="text-muted">
+      <li>Uso de <strong>componentes reutilizables</strong> y modulares.</li>
+      <li>Separación de responsabilidades (presentación, lógica, servicios).</li>
+      <li>Aplicación de principios <strong>SOLID</strong> y convenciones de nombres.</li>
+      <li>Uso de <strong>Reactive Forms</strong> para manejo de formularios y validaciones.</li>
+      <li>Organización clara del <strong>enrutamiento</strong> y manejo de rutas hijas.</li>
+    </ul>
+  </div>
+
+  <!-- === Código de ejemplo === -->
+  <div class="card border-0 shadow-sm mb-4 p-4">
+    <h5 class="fw-bold text-secondary mb-2">Ejemplo de Código</h5>
+    <p class="text-muted">
+      A continuación, se muestra un ejemplo simplificado de la lógica usada en la sección
+      de evaluación con formularios reactivos:
+    </p>
+
+    <pre class="bg-dark text-light rounded p-3 small">
+import &#123; FormBuilder, FormGroup &#125; from '@angular/forms';
+
+export class EvaluacionComponent &#123;
+  form!: FormGroup;
+
+  constructor(private fb: FormBuilder) &#123;
+    this.form = this.fb.group(&#123;
+      pregunta1: [''],
+      pregunta2: ['']
+    &#125;);
+  &#125;
+
+  finalizarEvaluacion() &#123;
+    const respuestas = this.form.value;
+    console.log('Respuestas:', respuestas);
+  &#125;
+&#125;
+    </pre>
+  </div>
+
+  <!-- === Beneficios de la implementación === -->
+  <div class="card border-0 shadow-sm p-4">
+    <h5 class="fw-bold text-secondary mb-2">Beneficios del Enfoque Adoptado</h5>
+    <ul class="text-muted">
+      <li>Facilita la comprensión y mantenimiento del código.</li>
+      <li>Permite ampliar funcionalidades sin afectar el núcleo del sistema.</li>
+      <li>Promueve la estandarización y buenas prácticas de desarrollo.</li>
+      <li>Garantiza mayor calidad, rendimiento y sostenibilidad del proyecto.</li>
+    </ul>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,29 +7,15 @@ import { Injectable } from '@angular/core';
 export class SidebarService {
 
   menu: any[] = [
-    {
-      titulo: 'Gestión Hotelera',
-      icono: 'mdi mdi-gauge',
-      submenu: [        
-        { titulo: 'Hoteles', url: 'hotel' },
-        { titulo: 'Habitaciones', url: 'rooms' },
-        { titulo: 'Reservas', url: 'reservas' },
-        
-      ]
-    },
-    {
-      titulo: 'Reservas',
-      icono: 'mdi mdi-gauge',
-
-      submenu: [        
-        { titulo: 'Hoteles', url: 'hotel' },
-        { titulo: 'Habitaciones', url: 'rooms' },
-        { titulo: 'Reservas', url: 'reservas' },
-        
-      ]
-    },
 
   ];
 
   constructor() { }
+
+  private sidebarOpen = new BehaviorSubject<boolean>(true);
+  sidebarOpen$ = this.sidebarOpen.asObservable();
+
+  toggleSidebar() {
+    this.sidebarOpen.next(!this.sidebarOpen.value);
+  }
 }

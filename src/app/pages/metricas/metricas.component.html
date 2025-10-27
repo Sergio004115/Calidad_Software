@@ -1,0 +1,103 @@
+<div class="container py-4">
+  <h3 class="fw-bold text-dark mb-3">Métricas y Evaluación de la Calidad del Software</h3>
+  <p class="text-muted mb-4">
+    Las métricas de calidad permiten evaluar objetivamente diferentes aspectos del software y sus procesos. 
+    Ayudan a tomar decisiones basadas en datos, detectar defectos, controlar la complejidad y mejorar la mantenibilidad del sistema.
+  </p>
+
+  <!-- === Primera fila (3 tarjetas) === -->
+  <div class="row gy-4 gx-4">
+    <!-- Métricas de Producto -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-sm h-100 p-3">
+        <div class="d-flex align-items-center mb-2">
+          <i class="bi bi-cpu fs-3 text-primary me-2"></i>
+          <h5 class="fw-bold mb-0">Métricas de Producto</h5>
+        </div>
+        <p class="text-muted small">
+          Evalúan las características internas del software como la complejidad, el acoplamiento entre módulos, 
+          la densidad de defectos o la estructura del código fuente.
+        </p>
+      </div>
+    </div>
+
+    <!-- Métricas de Proceso -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-sm h-100 p-3">
+        <div class="d-flex align-items-center mb-2">
+          <i class="bi bi-gear-fill fs-3 text-success me-2"></i>
+          <h5 class="fw-bold mb-0">Métricas de Proceso</h5>
+        </div>
+        <p class="text-muted small">
+          Miden la eficiencia de las actividades de desarrollo: tiempo invertido, productividad del equipo, 
+          eficacia de las pruebas y cumplimiento de cronogramas.
+        </p>
+      </div>
+    </div>
+
+    <!-- Métricas de Proyecto -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card border-0 shadow-sm h-100 p-3">
+        <div class="d-flex align-items-center mb-2">
+          <i class="bi bi-clipboard-data fs-3 text-warning me-2"></i>
+          <h5 class="fw-bold mb-0">Métricas de Proyecto</h5>
+        </div>
+        <p class="text-muted small">
+          Evalúan la gestión global del proyecto: recursos utilizados, riesgos, desviaciones respecto al plan 
+          y nivel de cumplimiento de los objetivos de calidad definidos.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Segunda fila: Simulador de Índice de Calidad === -->
+  <div class="card border-0 shadow-sm mt-5 p-4">
+    <h5 class="fw-bold text-secondary mb-3">Simulador de Índice de Calidad</h5>
+    <p class="text-muted small mb-4">
+      Ajusta los valores de cada atributo para ver cómo impactan en el índice de calidad general del software.
+    </p>
+
+    <div class="row">
+      <div class="col-md-6 mb-3" *ngFor="let factor of factores">
+        <label class="form-label fw-semibold">{{ factor.nombre }}</label>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          [(ngModel)]="factor.valor"
+          (input)="calcularIndice()"
+          class="form-range"
+        />
+        <div class="text-muted small">{{ factor.valor }}%</div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <h4 class="fw-bold mb-2">Índice de Calidad Global</h4>
+      <h2
+        [ngClass]="{
+          'text-success': indice >= 75,
+          'text-warning': indice >= 50 && indice < 75,
+          'text-danger': indice < 50
+        }"
+      >
+        {{ indice | number: '1.0-0' }}%
+      </h2>
+      <p class="text-muted small mb-0">
+        Este valor representa una estimación del nivel de calidad considerando usabilidad, mantenibilidad, seguridad y rendimiento.
+      </p>
+    </div>
+  </div>
+
+  <!-- === Beneficios === -->
+  <div class="card border-0 shadow-sm mt-5 p-4 bg-light">
+    <h5 class="fw-bold text-secondary mb-3">Importancia de las Métricas en la Calidad del Software</h5>
+    <ul class="text-muted small mb-0">
+      <li>✔️ Permiten decisiones basadas en evidencia, no en percepciones.</li>
+      <li>✔️ Ayudan a detectar problemas antes de que afecten al usuario final.</li>
+      <li>✔️ Favorecen la mejora continua y la eficiencia en los equipos.</li>
+      <li>✔️ Facilitan auditorías y comparaciones objetivas entre proyectos.</li>
+    </ul>
+  </div>
+</div>

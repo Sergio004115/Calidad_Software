@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && ng build --prod",
     "build:netlify": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -48,6 +48,6 @@
     "typescript": "~3.9.5"
   },
   "engines": {
-    "node": "14"
+    "node": "14.x"
   }
 }

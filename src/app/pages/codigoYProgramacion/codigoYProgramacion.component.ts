@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-codigoYProgramacion',
-  templateUrl: './codigoYProgramacion.component.html',
-  styleUrls: ['./codigoYProgramacion.component.scss']
+  templateUrl: './CodigoYProgramacion.component.html',
+  styleUrls: ['./CodigoYProgramacion.component.scss']
 })
 export class CodigoYProgramacionComponent implements OnInit {
 

@@ -10,7 +10,7 @@ import { EstandaresComponent } from './estandares/estandares.component';
 import { MetricasComponent } from './metricas/metricas.component';
 import { TestingComponent } from './testing/testing.component';
 import { EvaluacionComponent } from './evaluacion/evaluacion.component';
-import { CodigoYProgramacionComponent } from './codigoYProgramacion/CodigoYProgramacion.component';
+import { CodigoYProgramacionComponent } from './CodigoYProgramacion/CodigoYProgramacion.component';
 import { ConclusionesComponent } from './conclusiones/conclusiones.component';
 import { RecomendacionesComponent } from './recomendaciones/recomendaciones.component';
 
